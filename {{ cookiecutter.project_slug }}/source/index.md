@@ -1,0 +1,8 @@
+# Welcome to {{ cookiecutter.project_name }} documentation
+
+:::{toctree}
+:maxdepth: 2
+:caption: "Contents:"
+
+key_people/index
+:::
