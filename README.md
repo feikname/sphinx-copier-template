@@ -15,5 +15,5 @@ sudo apt install inotify-tools # watch.sh
 
 ```bash
 sudo apt install cookiecutter
-cookiecutter
+cookiecutter https://github.com/feikname/cookiecutter-sphinx
 ```
