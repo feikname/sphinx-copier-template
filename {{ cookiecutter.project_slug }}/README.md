@@ -1,4 +1,4 @@
-# documentation {{ cookiecutter.project_name }} documentation
+# {{ cookiecutter.project_name }} documentation
 
 This is a Sphinx template configured to use markdown, some MyST
 extensions, and a `watch.sh` script.
