@@ -1,0 +1,15 @@
+# copier.yaml
+project_name:
+  type: str
+  default: "My project"
+  help: "Human-readable project name"
+
+author_name:
+  type: str
+  default: "Flavio Monteiro"
+  help: "Author name"
+
+version:
+  type: str
+  default: "0.1.0"
+  help: "Initial project version"

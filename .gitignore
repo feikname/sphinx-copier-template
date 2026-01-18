@@ -1,0 +1,4 @@
+build/
+nohup.out
+.venv/
+_copier_answers.yml
