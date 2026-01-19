@@ -9,6 +9,13 @@ author_name:
   default: "Flavio Monteiro"
   help: "Author name"
 
+sphinx_theme:
+  type: str
+  default: sphinx_book_theme
+  choices:
+    - sphinx_book_theme
+    - sphinx_rtd_theme
+
 version:
   type: str
   default: "0.1.0"
