@@ -1,86 +1,25 @@
-# {{ project_name }} documentation
+# Copier Sphinx documentation template
 
 This is a Sphinx template configured to use markdown, some MyST
-extensions, and some Makefile/justfile goodies.
+extensions, and some Makefile/justfile goodies, tailored to my
+specific preferences.
 
-## Setup (Linux)
+## How to use
 
-```bash
-python -m venv .venv
-. .venv/bin/activate
-pip install -r requirements.txt
-```
-
-## Setup (Windows)
+If you don't want auto venv
 
 ```bash
-python -m venv .venv
-.venv\Scripts\activate
-pip install -r requirements.txt
+copier copy gh:feikname/copier-sphinx-template your-project-folder --skip--tasks
 ```
 
-## How to preview your changes (build html)
-
-You wil need to complete the build prerequisites section first.
-If you haven't completed it yet, please go back there.
-
-Once you edit a sphinx project, you need to generate a build for it.
-
-You can do it by going inside the project folder and running:
+If you want auto venv:
 
 ```bash
-make html
+copier copy gh:feikname/copier-sphinx-template your-project-folder --skip--tasks
 ```
 
-Then open `build/html/index.html` (or do `make open`) and see your
-changes.
-
-## Fix funny state
-
-Sometimes `make html` can leave builds in a funny state, if that
-happens, run:
+## How to install copier (pipx)
 
 ```bash
-make clean && make html
-```
-
-## Live HTML (auto rebuild)
-
-There's also a convenience target for live HTML that calls
-sphinx-autobuild:
-
-```bash
-make livehtml
-```
-
-## Justfile support
-
-If you plan on using the justfile instead of the Makefiles:
-
-```bash
-pipx install rust-just
-```
-
-## Intersphinx
-
-Sphinx allows projects to cross-reference each other. To see the
-available references in any of the subprojects and do:
-
-```bash
-python -m sphinx.ext.intersphinx build/html/objects.inv
-```
-
-You can check for broken links (again, inside a project folder) with:
-
-```bash
-sphinx-build -b linkcheck . _build/linkcheck
-```
-
-To link to sections of another project you can use any of the following
-ways, both work:
-
-```text
-{doc}`Or even <hpc_team:key_people/index>`
-
-{external+hpc_team:ref}`hpc-key-people`
+pipx install copier
 ```
