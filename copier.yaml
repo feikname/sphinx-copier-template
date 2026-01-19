@@ -41,3 +41,11 @@ include_intersphinx:
   type: bool
   default: false
   help: Include sphinx.ext.intersphinx template?
+
+# P.S. _tasks makes it obligatory to use either --trust or --skip--tasks
+# when running `copier copy`
+_tasks:
+  - command: python -m venv .venv
+
+  - command: . .venv/bin/activate && pip install -r requirements.txt
+    when: "{{ _copier_conf.os in  ['linux', 'macos'] }}"
