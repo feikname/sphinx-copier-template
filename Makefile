@@ -16,7 +16,7 @@ help:
 
 # Open built HTML docs
 open:
-	xdg-open "$(BUILDDIR)/html/index.html"
+	python -m webbrowser -t "$(BUILDDIR)/html/index.html"
 
 # Catch-all target: route all unknown targets to Sphinx using the new
 # "make mode" option.  $(O) is meant as a shortcut for $(SPHINXOPTS).

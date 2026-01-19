@@ -25,6 +25,12 @@ if errorlevel 9009 (
 
 if "%1" == "" goto help
 
+REM
+if /I "%1" == "open" (
+	python -m webbrowser -t "%CD%\%BUILDDIR%\html\index.html"
+	goto end
+)
+
 %SPHINXBUILD% -M %1 %SOURCEDIR% %BUILDDIR% %SPHINXOPTS% %O%
 goto end
 
