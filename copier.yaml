@@ -43,7 +43,7 @@ include_intersphinx:
   default: false
   help: Include sphinx.ext.intersphinx template?
 
-# P.S. _tasks makes it obligatory to use either --trust or --skip--tasks
+# P.S. _tasks makes it obligatory to use either --trust or --skip-tasks
 # when running `copier copy`
 _tasks:
   - command: python -m venv .venv

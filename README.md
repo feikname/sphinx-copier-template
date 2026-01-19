@@ -9,13 +9,13 @@ specific preferences.
 If you don't want auto venv
 
 ```bash
-copier copy gh:feikname/copier-sphinx-template your-project-folder --skip--tasks
+copier copy gh:feikname/sphinx-copier-template --skip-tasks your-project-folder
 ```
 
 If you want auto venv:
 
 ```bash
-copier copy gh:feikname/copier-sphinx-template your-project-folder --skip--tasks
+copier copy gh:feikname/sphinx-copier-template --trust your-project-folder
 ```
 
 ## How to install copier (pipx)
