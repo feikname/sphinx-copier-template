@@ -16,7 +16,28 @@ sphinx_theme:
     - sphinx_book_theme
     - sphinx_rtd_theme
 
+include_copyright:
+  type: bool
+  default: false
+  help: Include copyright notice?
+
+include_version:
+  type: bool
+  default: false
+  help: Include version?
+
 version:
   type: str
   default: "0.1.0"
   help: "Initial project version"
+  when: "{{ include_version }}"
+
+include_autosectionlabel:
+  type: bool
+  default: true
+  help: Include sphinx.ext.autosectionlabel?
+
+include_intersphinx:
+  type: bool
+  default: false
+  help: Include sphinx.ext.intersphinx template?

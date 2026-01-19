@@ -8,8 +8,14 @@
 
 project = "{{ project_name }}"
 author = "{{ author_name }}"
+{% if include_version %}
 release = "{{ version }}"
-copyright = "2025, {{ author_name }}"
+{% endif %}
+{% if include_copyright %}
+copyright = "%Y, {{ author_name }}"
+{% else %}
+html_show_copyright = False
+{% endif %}
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
@@ -18,8 +24,17 @@ extensions = [
     "myst_parser",
     "sphinx_design",
     "sphinxcontrib.mermaid",
+    "sphinx_copybutton",
+    {% if include_autosectionlabel %}
+    "sphinx.ext.autosectionlabel",
+    {% endif %}
+    {% if include_intersphinx %}
+    "sphinx.ext.intersphinx",
+    {% endif %}
 ]
-
+{% if include_autosectionlabel %}
+autosectionlabel_prefix_document = True
+{% endif %}
 templates_path = ["_templates"]
 exclude_patterns = []
 
@@ -51,3 +66,26 @@ myst_enable_extensions = [
     "deflist",
     "strikethrough",
 ]
+
+# supress 'WARNING: Strikethrough is currently only supported in HTML output [myst.strikethrough]'
+suppress_warnings = ["myst.strikethrough"]
+
+# allow linking to headers up to h3 (#, ##, ###)
+myst_heading_anchors = 3
+
+{% if include_intersphinx %}
+# Intersphinx configuration
+from pathlib import Path
+
+# We recommend adding the following config value.
+# Sphinx defaults to automatically resolve *unresolved* labels using all your Intersphinx mappings.
+# This behavior has unintended side-effects, namely that documentations local references can
+# suddenly resolve to an external location.
+# See also:
+# https://www.sphinx-doc.org/en/master/usage/extensions/intersphinx.html#confval-intersphinx_disabled_reftypes
+intersphinx_disabled_reftypes = ["*"]
+
+# intersphinx_mapping = {
+#     "python": ("https://docs.python.org/3", None),
+# }
+{% endif %}
