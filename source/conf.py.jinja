@@ -26,9 +26,22 @@ exclude_patterns = []
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
+{% if sphinx_theme == "sphinx_book_theme" %}
+# https://sphinx-book-theme.readthedocs.io/en/latest/tutorials/get-started.html
+{% endif %}
 html_theme = "{{ sphinx_theme }}"
 html_static_path = ["_static"]
-
+{% if sphinx_theme == "sphinx_book_theme" %}
+# -- Use sphinx_book_theme GitHub integration -------------------------------------------------
+# html_theme_options = {
+#     "repository_url": "https://github.com/feikname/cookiecutter-sphinx",
+#     "use_repository_button": True,
+#     "use_issues_button": True,
+#     "use_edit_page_button": True,
+#     "path_to_docs": "docs",
+#     "show_toc_level": 2,
+# }
+{% endif %}
 # -- MyST Options -------------------------------------------------
 # https://myst-parser.readthedocs.io/en/latest/syntax/optional.html
 myst_enable_extensions = [
